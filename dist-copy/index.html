@@ -1,0 +1,304 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Stefani stateFundingillustration.js</title>
+
+  
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="./main.css" />
+ 
+</head>
+
+<body>
+  <div id='layout'>
+    <h2 style="color:pink; font-size:50px; text-shadow: -1px 1px 0 #000,
+				  1px 1px 0 #000,
+				 1px -1px 0 #000;
+				-1px -1px 0 #000;">
+      Educational Inequality: A Data Visualization in Progress   
+    </h2>
+    <p style="font-family:sans-serif;font-weight: bold;"> "There are four ways to measure how much our country spends on students of color
+    compared to white students. Each tells a different version of the same story. First,
+    across the country schools spent $334 more on every white student than on every
+    nonwhite student. To get this figure I simply divided each school’s adjusted total
+    spending into “white” and “nonwhite” shares based on the proportion of students
+    who are white. Then I added each of these “white” and “nonwhite” shares across the
+    country and divided by the total number of white and nonwhite students. This is a
+    nontrivial spending difference, given that the median per-pupil spending was $4,038. The $334 average shortfall is
+    8 percent of the median per-pupil spending.<br> <br>
+    The second version of the problem is more troubling: It focuses on the most
+    racially isolated schools. More than one-third of the students represented by this
+    new dataset attend schools that are either more than 90 percent white or more
+    than 90 percent nonwhite. The spending difference between these schools is large.
+    The mostly white schools spent $733 more per student than the mostly nonwhite
+    schools,9
+    or 18 percent of the median per-pupil spending nationwide.aches, or laptop computers.
+    The problem: Underinvesting
+    in students of color
+    Across the
+    country schools
+    spent $334 more
+    on every white
+    student than on
+    every nonwhite
+    student.
+    Mostly white
+    schools spent $733
+    more per student
+    than the mostly
+    nonwhite schools.
+    <br> <br>
+    OK, skeptics might say, but that is comparing the two ends of the spectrum:
+    schools that are almost entirely white with schools that are almost entirely nonwhite. What about the whole story? The
+    last two versions of the problem answer
+    this question. Version three compares the “high-minority” schools (90 percent
+    or more nonwhite) to all other schools. We spend $293 less per year on students
+    in these heavily minority schools than on students in all other schools. That’s 7
+    percent of the median per-pupil spending.
+    Finally, across all schools, an increase of 10 percent in students of color is associated with a decrease in spending of
+    $75 per student.12 This is a fairly small number,
+    given that the median per-pupil spending in 2009 was $4,038. This analysis does
+    not imply that spending is being determined by race, explicitly or implicitly. But
+    given the 20 percent gap in high school graduation rates between white students
+    (78 percent) and their peers—Hispanic (58 percent), black (57 percent), and
+    American Indian (54 percent)—spending less money on schools that serve more
+    students of color, even if it is not on purpose, simply does not make sense.13
+    <br>
+    <br>
+    <br>
+    Table 2 shows how an increase of 10 percent in students of color is related to
+    per-pupil spending in each state. It shows that in 24 states an increase in the
+    concentration of students of color is associated with a decrease in dollars spent
+    per pupil. These 24 states educate 63 percent of all students of color. In 13 states
+    the percentage of students of color is not related to a school’s per-pupil spending.
+    In 12 states an increase in the concentration of students of color is associated with
+    an increase in per-pupil spending. This positive news is tempered by the fact that
+    only 12 percent of students of color attend school in these states. (New Jersey was
+    excluded from the entire analysis because it mistakenly included federal spending
+    in its report instead of only state and local spending."
+  
+<br>
+<br>
+(Ary Spatig-Amerikaner, page 7-8 of "Unequal Education:
+Federal Loophole Enables Lower Spending on Students of Color")
+</p>
+
+    <div id='container'>
+      <svg />
+      <br><br><br><br><br><br><br><br>
+     
+    </div>
+   
+
+  </div>
+<br><br><br><br> <br>
+<p style="font-family:sans-serif;font-weight: bold;" >Yet as we will see as we scroll further, school funding and what happens within the bounds of the school building is only part of the picture. Measures of neighorhood poverty, pollution, food deserts, and lack of access to green space are all associated with educational outcomes, forming a veritable landscape of inequality. The following map is a choropleth made by mapping the number of children under 17 living in poverty onto a map of Alameda County's school districts. Oakland forms a dramatic sea of yellow in light of its child poverty crisis. Over 12,000 Oakland school children are living in poverty, while districts such as Albany and Berkeley have less than 1000 students affected by poverty.</p>
+<object class="full-group" type="image/svg+xml" data="ca-albers-color-7.svg">
+</object>
+<script src="main.js"></script>
+
+<div class='my-legend'>
+  <div class='legend-title'> Number of Children(Under 17) Living in Poverty, by School District</div>
+  <div class='legend-scale'>
+    <ul class='legend-labels'>
+      <li><span style='background: purple'></span> less than 1000</li>
+      <li><span style='background:darkblue'></span>1000-4000</li>
+      <li><span style='background: #004466;'></span>4000-7000</li>
+      <li><span style='background:green'></span>7000-10000</li>
+      <li><span style='background:yellow'></span>>10000</li>
+    </ul>
+  </div>
+  <div class='legend-source'>Source: <a
+      href="https://api.census.gov/data/timeseries/poverty/saipe/schdist?get=SD_NAME,SAEPOV5_17RV_PT&for=school+district+(unified):*&in=state:06&time=2016">2016
+      Community Timeseries Count, US Census.gov</a></div>
+</div>
+<p style="font-family:sans-serif;font-weight: bold;"><br><br>
+  The lifelong results of inequitable school funding and underresourcing of working-class neighborhoods are all too apparent by the time students reach the collegiate level. On the surface, the class background of first-time freshman seem fairly diverse:
+</p>
+<div id="stefani_data">
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script>
+
+    var width = 650
+    height = 650
+    margin = 50
+
+
+    var radius = Math.min(width, height) / 2 - margin
+
+    var svg = d3.select("#stefani_data")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    var data = { "in poverty": 12, "near poverty": 17, "lower-middle income": 18, "middle income": 45, "high income": 8 }
+    var data2 = { a: 20, b: 19, c: 15, d: 37, e: 9 }
+    //look up prettier color scales if time allows
+    var color = d3.scaleOrdinal()
+      .domain(data)
+      .range(d3.schemePaired);
+
+    var pie = d3.pie()
+      .value(function (d) { return d.value; })
+    var data_ready = pie(d3.entries(data))
+
+    var arcGenerator = d3.arc()
+      .innerRadius(0)
+      .outerRadius(radius)
+
+    svg
+      .selectAll('mySlices')
+      .data(data_ready)
+      .enter()
+      .append('path')
+      .attr('d', arcGenerator)
+      .attr('fill', function (d) { return (color(d.data.key)) })
+      .attr("stroke", "black")
+      .style("stroke-width", "2px")
+      .style("opacity", 0.7)
+
+      /
+      svg
+        .selectAll('mySlices')
+        .data(data_ready)
+        .enter()
+        .append('text')
+        .text(function (d) { return d.data.key + " " + d.data.value + "%" })
+        .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+        .style("text-anchor", "middle")
+        .style("font-size", 12)
+
+
+  </script>
+</div>
+<br>
+<br>
+<p style="font-family:sans-serif;font-weight: bold;">In fact, as we see below, there have been more students from poor and working-class backgrounds enrolling in college now than a generation ago. 
+ <p style="font-family:sans-serif">Source: Pew Research Center analysis of 1996 and 2016 National Post Secondary Student Aid Study(NPSAS). National Center for Education Statistics</p>
+
+<br></p>
+<div id="interactive_pie">
+  <button style="background-color:pink;font-family:sans-serif;font-weight: bold;color:green;font-size:40px;" onclick="update(data)">1996</button>
+  <button style="background-color:lightblue;font-family:sans-serif;font-weight: bold;color:darkblue;font-size:40px;"onclick="update(data2)">2016</button>
+<p style="font-family:sans-serif;font-weight: bold;">Click on year to see stats change!</p>
+  <script>
+
+    
+    var width = 650
+    height = 650
+    margin = 50
+
+    
+    var radius = Math.min(width, height) / 2 - margin
+
+    var svg = d3.select("#interactive_pie")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    // go back to this to get change b/w pies and label rendering at same time 
+    var data = { a: 12, b: 17, c: 18, d: 45, e: 8 }
+    var data2 = { a: 20, b: 19, c: 15, d: 37, e: 9 }
+
+    // set the color scale-- go back to this too if time allows
+    var color = d3.scaleOrdinal()
+      .domain(["a", "b", "c", "d", "e"])
+      .range(d3.schemePaired);
+
+    // Ask ahmad or shaeva about this 
+    function update(data) {
+
+      const pie = d3.pie()
+        .value(function (d) { return d.value; })
+        .sort(function (a, b) { console.log(a); return d3.ascending(a.key, b.key); }) // This make sure that group order remains the same in the pie chart
+      const data_ready = pie(d3.entries(data))
+
+      // not mapping to data nicely--FIX LATER  
+      var u = svg.selectAll("path")
+        .data(data_ready)
+
+      u
+        .enter()
+        .append('path')
+        .merge(u)
+        .transition()
+        .duration(1000)
+        .attr('d', d3.arc()
+          .innerRadius(0)
+          .outerRadius(radius)
+        )
+        .attr('fill', function (d) { return (color(d.data.key)) })
+        .attr("stroke", "black")
+        .style("stroke-width", "2px")
+        .style("opacity", 1)
+      u
+        .exit()
+        .remove()
+    }
+
+    update(data)
+    //repeat code: save for fixing change b/w data1 and data2 
+    svg
+      .selectAll('mySlices')
+      .data(data_ready)
+      .enter()
+      .append('text')
+      .text(function (d) { return d.data.key + " " + d.data.value + "%" })
+      .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+      .style("text-anchor", "middle")
+      .style("font-size", 12)
+
+  </script>
+
+</div>
+<p style="font-family:sans-serif;font-weight: bold;" > However, these statistics can be deceiving! As I continue to work on this project of educational funding stats, I will be adding more interactive exploration of the charts and graphs of the UNCF study, a foundational longitudinal study of educational achievement across the lifespan (and the structural/systemic factors impacting that attainment). Read more about the statistics to come at their PDF here: https://cdn.uncf.org/wp-content/uploads/PDFs/UnequalEduation.pdf?_ga=2.53088232.1149283204.1594762088-1321451570.1594762088  </p>
+</body>
+<script src="./mybarCode.js"></script>
+<style type='text/css'>
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 90%;
+  }
+
+  .my-legend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+  }
+
+  .my-legend .legend-scale ul li {
+    display: block;
+    float: left;
+    width: 50px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 80%;
+    list-style: none;
+  }
+
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 15px;
+    width: 50px;
+  }
+
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+  }
+
+  .my-legend a {
+    color: #777;
+  }
+</style>
+</html>
