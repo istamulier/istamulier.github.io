@@ -1,11 +1,32 @@
 
-body {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.h2 {
+  font-family: sans-serif;
   font-weight: normal;
+  color: #ec008c;
+}
+
+h3 {
+    display: none;
+    border:1px solid #000;
+    height:30px;
+    width:290px;
+    margin-left:10px;
+}
+
+
+
+.p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 5px;
 }
 
 div#layout {
   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  
 }
 
 div#container {
@@ -74,4 +95,12 @@ text.label {
 
 text.source {
   font-size: 10px;
+}
+.full-group:hover {
+    fill: #ec008c;
+    opacity: 1;
+}
+
+.full-group {
+  fill: #ec008c;
 }

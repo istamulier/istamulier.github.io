@@ -4,63 +4,195 @@ import './styles/main.css'
 
   const sample = [
       {
-    state: 'Vermont',
+    state: 'VT',
         value: -762,
         color: '#000000'
       },
 
       {
-    state: 'New Hampshire',
+    state: 'NH',
       value: -582,
-      color: '#000000'
+        color: '#fbcb39'
       },
+    {
+      state: 'NE',
+      value: -298,
+      color: '#00a2ee'
+    },
+    {
+      state: 'NV',
+      value: -257,
+      color: '#00a2ee'
+    },
+    {
+      state: 'KS',
+      value: -188,
+      color: '#00a2ee'
+    },
+    {
+      state: 'NM',
+      value: -179,
+      color: '#00a2ee'
+    },
+    {
+      state: 'CT',
+      value: -151,
+      color: '#00a2ee'
+    },
+    {
+      state: 'IA',
+      value: -151,
+      color: '#00a2ee'
+    },
+    {
+      state: 'CO',
+      value: -145,
+      color: '#00a2ee'
+    },
+    {
+      state: 'WV',
+      value: -125,
+      color: '#00a2ee'
+    },
+    {
+      state: 'ME',
+      value: -122,
+      color: '#00a2ee'
+    },
+
+    {
+      state: 'ID',
+      value: -120,
+      color: '#00a2ee'
+    },
+    {
+      state: 'DC',
+      value: -117,
+      color: '#00a2ee'
+    },
+    {
+      state: 'OR',
+      value: -114,
+      color: '#00a2ee'
+    },
+    {
+      state: 'WY',
+      value: -108,
+      color: '#00a2ee'
+    },
+    {
+      state: 'DE',
+      value: -106,
+      color: '#00a2ee'
+    },
+    {
+      state: 'CA',
+      value: -104,
+      color: '#00a2ee'
+    },
+    {
+      state: 'NY',
+      value: -104,
+      color: '#00a2ee'
+    },
+    {
+      state: 'WI',
+      value: -100,
+      color: '#00a2ee'
+    },
+    {
+      state: 'TX',
+      value: -95,
+      color: '#00a2ee'
+    },
+    {
+      state: 'RI',
+      value: -78,
+      color: '#00a2ee'
+    },
+    {
+      state: 'PA',
+      value: -73,
+      color: '#00a2ee'
+    },
+    {
+      state: 'OK',
+      value: -53,
+      color: '#00a2ee'
+    },
+    {
+      state: 'WA',
+      value: -50,
+      color: '#00a2ee'
+    },
+    {
+      state: 'IL',
+      value: -42,
+      color: '#00a2ee'
+    },
+    {
+      state: 'AZ',
+      value: -37,
+      color: '#00a2ee'
+    },
+    {
+      state: 'KT',
+      value: -30,
+      color: '#00a2ee'
+    },
+    {
+      state: 'AL',
+      value: -20,
+      color: '#00a2ee'
+    },
+
+    {
+      state: 'MS',
+      value: 16,
+      color: '#fbcb39'
+    },
+    {
+      state: 'VA',
+      value: 16,
+      color: '#00a2ee'
+    },
       {
-    state: 'Mississippi',
-        value: 16,
-        color: '#000000'
-      },
-      {
-    state: 'Virginia',
-        value: 16,
-        color: '#00a2ee'
-      },
-      {
-    state: 'Louisiana',
+    state: 'LA',
         value: 29,
         color: '#fbcb39'
       },
       {
-    state: 'Maryland',
+    state: 'MD',
         value: 36.0,
         color: '#007bc8'
       },
       {
-    state: 'Missouri',
+    state: 'MO',
         value: 41,
         color: '#65cedb'
       },
       {
-    state: 'Minnesota',
+    state: 'MN',
         value: 99,
         color: '#ff6e52'
       },
       {
-    state: 'South Carolina',
+    state: 'SC',
         value: 118,
         color: '#f9de3f'
       },
       {
-    state: 'North Dakota',
+    state: 'ND',
         value: 123,
         color: '#5d2f8e'
       },
       {
-    state: 'South Dakota',
+    state: 'SD',
         value: 140,
         color: '#008fc9'
       },
       {
-    state: 'Ohio',
+    state: 'OH',
         value: 162,
         color: '#507dca'
       }
@@ -77,27 +209,30 @@ import './styles/main.css'
 
     const stateFundingillustration = svg.append('g')
       .attr('transform', `translate(${margin}, ${margin})`);
+      
 
-      svg.append('text')
+
+svg.append('text')
           .attr('class', 'label')
           .attr('x', width / 1 + margin)
           .attr('y', height + margin * 1.5)
           .attr('text-anchor', 'middle')
           .text('states')
+        
 
         svg.append('text')
           .attr('class', 'title')
           .attr('x', width / 2 + margin)
           .attr('y', 40)
           .attr('text-anchor', 'middle')
-          .text('A 10% increase in students of color is associated with school district funding changes of...')
+          .text('A 10% increase in students of color is associated with school district funding changes of:')
 
         svg.append('text')
           .attr('class', 'source')
           .attr('x', width - margin / 2)
           .attr('y', height + margin * 1.7)
           .attr('text-anchor', 'start')
-          .text('Source: UNCF analysis of U.S. Department of Education expenditure data,adjusted for regional cost differences.')
+          .text('Source:2016 DOE expenditure data')
 
     const xScale = d3.scaleBand()
       .range([0, width])
@@ -210,6 +345,6 @@ import './styles/main.css'
       .attr('transform', 'rotate(-90)')
       .attr('text-anchor', 'middle')
       .text('Decrease/Increase in per pupil expenditure (USD)')
-
+      
 
 
